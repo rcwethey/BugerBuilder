@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './BuildControls.css';
+import classes from './BuildControls.module.css';
 import BuildControl from './BuildControl/BuildControl';
 
 const controls = [
@@ -24,7 +24,8 @@ const buildControls = (props) => (
         <button 
             className={classes.OrderButton}
             disabled={!props.purchasable}
-            onClick={props.ordered}>ORDER NOW</button>
+            onClick={props.ordered}>{props.isAuth ? 'ORDER NOW' : 'SIGN UP TO ORDER'}
+        </button>
     </div>
 );
 
